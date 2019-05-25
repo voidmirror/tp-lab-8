@@ -1,6 +1,6 @@
 
 
-<img src="img/red.png" width="50" height="50">
+<img src="img/green.png" width="50" height="50">
 
 # Cpp-lab-8
 
