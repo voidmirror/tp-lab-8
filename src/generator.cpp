@@ -84,12 +84,13 @@ int Generator::generateText(string fileout) {
 	fout << s_words[0] << " " << s_words[1] << " ";
 	
 	pref = table[deq];
-	while (!pref.empty()) {
+	while (!pref.empty() && wall > 0) {
 		buf = pref[rand() % pref.size()];
 		fout << buf << " ";
 		deq.pop_front();
 		deq.push_back(buf);
 		pref = table[deq];
+		wall--;
 	}
 
 	fout.close();
@@ -128,4 +129,8 @@ int Generator::printTableTo(string fileout) {
 		}
 		fout.close();
 	}
+}
+
+void Generator::setWall(int new_wall) {
+	wall = new_wall;
 }

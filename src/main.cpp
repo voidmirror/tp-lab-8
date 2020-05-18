@@ -4,18 +4,18 @@
 int main() {
 	setlocale(LC_ALL, "Russian");
 
-	/*Generator gen;
+	Generator gen;
 
 	gen.makeTable("input.txt");
 	gen.generateText("output.txt");
-	gen.printTableTo("table.txt"); */
+	gen.printTableTo("table.txt"); 
 
 	// or
 
-	Generator gen("table.txt");
+	/*Generator gen("table.txt");
 
 	gen.generateText("output.txt");
-	gen.printTableTo();
+	gen.printTableTo();*/
 
 	return 0;
 }
