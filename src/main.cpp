@@ -9,9 +9,9 @@
 
 using namespace std;
 
-typedef deque<string> prefix;          // очередь префиксов
-const int NPREF = 2; // количество слов в префиксе
-const int MAXGEN = 1000; //объем текста на выходе
+typedef deque<string> prefix;          // Г®Г·ГҐГ°ГҐГ¤Гј ГЇГ°ГҐГґГЁГЄГ±Г®Гў
+const int NPREF = 2; // ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±Г«Г®Гў Гў ГЇГ°ГҐГґГЁГЄГ±ГҐ
+const int MAXGEN = 1000; //Г®ГЎГєГҐГ¬ ГІГҐГЄГ±ГІГ  Г­Г  ГўГ»ГµГ®Г¤ГҐ
 
 int main() {
 	setlocale(LC_ALL, "Russian");
@@ -20,7 +20,7 @@ int main() {
 	prefix tmpPref;
 	prefix Spref;
 	prefix tmpSpref;
-	map<prefix, vector<string> > statetab; // префикс-суффиксы
+	map<prefix, vector<string> > statetab; // ГЇГ°ГҐГґГЁГЄГ±-Г±ГіГґГґГЁГЄГ±Г»
 
 	ifstream fin("input.txt");
 	if (!fin) return -1;
@@ -49,7 +49,7 @@ Spref = tmpPref;
 	for (int i = 0; i < NPREF; i++) {
 		fout << Spref[i] << " ";
 	}
-	k = 2;
+	k = NPREF;
 	while (k<MAXGEN && Spref!=tmpPref) {
 		tmpSpref = Spref;
 		ch = rand() % statetab[Spref].size();
