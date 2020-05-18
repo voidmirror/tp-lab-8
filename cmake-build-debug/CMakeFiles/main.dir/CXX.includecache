@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/config.h
+
+../include/funcs.h
+string
+-
+deque
+-
+vector
+-
+map
+-
+
+/home/fiskirton/Documents/Projects/repos/tp-lab-8/src/funcs.cpp
+funcs.h
+-
+fstream
+-
+random
+-
+config.h
+/home/fiskirton/Documents/Projects/repos/tp-lab-8/src/config.h
+

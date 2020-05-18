@@ -1,0 +1,7 @@
+#ifndef TEXT_GENERATOR_CONFIG_H
+#define TEXT_GENERATOR_CONFIG_H
+
+const int PREFSIZE = 2;
+const int TEXTSIZE = 1000;
+
+#endif //TEXT_GENERATOR_CONFIG_H
