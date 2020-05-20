@@ -11,7 +11,7 @@ TextGenerator::~TextGenerator()
 
 void TextGenerator::analysis(std::string text)
 {
-    std::regex regex{R"([();:!?\s,]+)"};
+    std::regex regex{R"([()«»;:!?\s,]+)"};
     std::sregex_token_iterator it{text.begin(), text.end(), regex, -1};
     std::vector<std::string> words{it, {}};
     
@@ -152,5 +152,12 @@ std::string TextGenerator::readFileAndGenerateText(std::string fname)
     this->analysis(text);
     res = this->generateStr();
 
-    return text;
+    std::ofstream out("res.txt", std::ios::app);
+    if (out.is_open())
+    {
+        out << res << std::endl;
+    }
+    out.close(); 
+
+    return res;
 }
