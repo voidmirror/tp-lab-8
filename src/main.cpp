@@ -16,34 +16,34 @@ int main() {
 	std::ifstream in("input.txt");
 	std::ofstream out("output.txt");
 
-	prefix pr, first_pr;
-	std::string s;
+	prefix current_prefix, first_prefix;
+	std::string word;
 	for (int i = 0; i < NPREF; i++) {
-		in >> s;
-		pr.push(s);
+		in >> word;
+		current_prefix.push(word);
 	}
 
-	first_pr = pr;
-	while (in >> s) {
-		statetab[pr].push_back(s);
-		pr.pop();
-		pr.push(s);
+	first_prefix = current_prefix;
+	while (in >> word) {
+		statetab[current_prefix].push_back(word);
+		current_prefix.pop();
+		current_prefix.push(word);
 	}
-	pr = first_pr;
+	current_prefix = first_prefix;
 
-	while (!first_pr.empty()) {
-		out << first_pr.front() << " ";
-		first_pr.pop();
+	while (!first_prefix.empty()) {
+		out << first_prefix.front() << " ";
+		first_prefix.pop();
 	}
 
 	for (int i = 0; i < MAXGEN; i++) {
-		if (statetab[pr].empty())
+		if (statetab[current_prefix].empty())
 			break;
-		int num = rand()%statetab[pr].size();
-		std::string postfix = statetab[pr][num];
+		int num = rand()%statetab[current_prefix].size();
+		std::string postfix = statetab[current_prefix][num];
 		out << postfix << " ";
-		pr.pop();
-		pr.push(postfix);
+		current_prefix.pop();
+		current_prefix.push(postfix);
 	}
 
 	return 0;
