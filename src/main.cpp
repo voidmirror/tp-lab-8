@@ -6,6 +6,7 @@
 #include <map>
 #include <fstream>
 #include <string>
+#include <ctime>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ const int MAXGEN = 1000; //îáúåì òåêñòà íà âûõîäå
 
 int main() {
 	setlocale(LC_ALL, "Russian");
+	srand(time(0));
 	int k;
 	int ch;
 	prefix tmpPref;
