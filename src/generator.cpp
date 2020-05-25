@@ -29,6 +29,7 @@ void generator() {
 			pref.push_back(str);
 		}
 	}
+	stream1.close();
 	std::ofstream stream2("output.txt");
 	int numPostf;
 	for (uint i = 0; i < NPREF; i++) {
