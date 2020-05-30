@@ -18,7 +18,6 @@ int main() {
 	ofstream outp("result.txt");
 	outp << result;
 	outp.close();
-	system("pause");
 	return 0;
 }
 
