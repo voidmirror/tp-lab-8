@@ -1,0 +1,1 @@
+/usr/bin/c++  -g -Wall -g  -rdynamic CMakeFiles/main.dir/src/main.cpp.o CMakeFiles/main.dir/src/funcs.cpp.o  -o main 
